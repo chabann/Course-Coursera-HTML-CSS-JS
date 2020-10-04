@@ -1,0 +1,313 @@
+/*body {
+    background-color: #FFF8DC;
+}*/
+
+header {
+    text-align: center;
+}
+
+header > h1 {
+    color: #FF8C00;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 > span {
+    color: red;
+}
+
+.control_lab {
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    top: -40px;
+    left: -85px;
+}
+
+.view_control {
+    position: relative;
+    left: 45%;
+}
+
+#list, #plate, .controls_label, .control_input, img {
+    cursor: pointer;
+}
+
+#plate:checked + .controls_label > img, 
+#list:checked + .controls_label > img {
+    background-color: #808080;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#plate, #list {
+    opacity: 0;
+}
+
+.name:hover > a{
+    color: red;
+} 
+
+.photo_card > img:hover {
+    opacity: 0.7;
+}
+
+.photo_card > img:hover ~ .info > a,
+.name:hover {
+    color: red;
+}
+
+.controls_label {
+    max-width: 5px;
+    max-height: 5px;
+    background-size: contain;
+    position: relative;
+    left: 45%;
+}
+
+.controls_label > img {
+    width: 25px;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 1px;
+    box-shadow: 0 0 0px rgba(0,0,0,0.5);
+    position: relative;
+
+}
+
+#list {
+    background-image: url(cats/list.jpg);
+    background-size: cover;
+}
+
+#list:checked ~ ul > .card {
+    box-sizing: border-box;
+    width: inherit;
+    min-height: 300px;
+    height: 350px;
+    vertical-align: middle;
+    float: left;
+    min-width: 600px;
+    max-width: 1000px;
+    margin: 0 auto 10px 15%;
+    /*border: 1px solid red;*/
+}
+
+#list:checked ~ ul .photo_card {
+    text-align: left;
+    margin: 10px 10px;
+    float: left;
+    width: 270px;
+    height: 270px;
+    padding-right: 2em;
+    vertical-align: middle;
+}
+
+#list:checked ~ ul .photo_card > img{
+    vertical-align: middle;
+    top: 15%;
+}
+
+#list:checked ~ ul .info {
+    position: relative;
+    width: auto;
+    float: left;
+    top: 25%;
+    margin-right: 30px;
+    background-color: transparent;
+}
+
+#list:checked ~ ul .info .price{
+margin: 10px auto 10px 10px;
+}
+
+#list:checked ~ ul .info .name{
+    margin: 10px auto 10px 10px;
+}
+
+#list:checked ~ul > .rating_block {
+    margin-left: 15%;
+}
+
+#list:checked ~ ul .description {
+    position: relative;
+    display: block;
+    width: auto;
+    max-width: 40%;
+    background-color: transparent;
+    height: auto;
+    max-height: 300px;
+    left: 0;
+    top: 25%;
+    float: right;
+}
+
+.cards {
+    display: inline-block;
+    padding: 0;
+}
+
+.card {
+    position: relative;
+    box-sizing: content-box;
+    display: inline-block;
+    vertical-align: top;
+    top: 0;
+    width: 300px;
+    min-height: 500px;
+    margin: 20px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 0;
+}
+
+.photo_card {
+    position: relative;
+    display: inline-block;
+    width: 270px;
+    height: 270px;
+    margin: 5% 5% 0;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    position: absolute;
+    border-radius: 15px;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.name {
+    display: inline-block;
+    position: relative;
+    color: blue;
+    font: 30px serif;
+    text-decoration: underline;
+    overflow: hidden;
+    max-width : 85%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.breed {
+    font: 15px serif;
+    text-decoration: underline;
+}
+
+.price {
+    color: red;
+    font: bold 20px sans-serif;
+}
+
+.price > .old_price {
+    color: gray;
+    font-weight: normal;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+.description {
+    background-color: transparent;
+    top: 400px;
+}
+
+.description p{
+    background-color: transparent;
+}
+
+.rating_block input[type="radio"] {
+    display: none;
+}
+.label_rating {
+    float: right;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(cats/rating.png) no-repeat 50% 0;
+    cursor: pointer;
+}
+
+.rating_block {
+    width: 125px;
+    height: 25px;
+    margin-left: 30%;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+  /*Пишем правила смены положения background-а*/
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating2"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating3"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating4"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating5"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating6"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating7"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating8"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating9"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}
+
+.rating_block .label_rating:hover, /*Правило для ховера на текущий лейбл*/
+.rating_block .label_rating:hover ~ .label_rating, /*Правило для всех следующих лейблов по DOM дереву*/
+.rating_block input[name="rating10"]:checked ~ .label_rating /*Правило для всех следующих лейблов после выбранного инпута, чтобы звездочки как бы зафиксировались*/
+{
+    background-position: 50% -25px;
+}

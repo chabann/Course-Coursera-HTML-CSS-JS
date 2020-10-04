@@ -1,0 +1,242 @@
+body {
+    margin: 50px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 26px;
+    color: royalblue;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1:first-letter {
+    color: darkorchid;
+}
+
+input.inline {
+    float:right;
+    cursor: pointer;
+    appearance: none;
+    left:0;
+    right:0;
+    width: 30px;
+    height: 30px;
+    margin:0 120px 0 5px;
+    padding:0;
+    background-size: 30px 30px;
+    background-image: url(source/inline.png);
+}
+
+input.list {
+    float:right;
+    cursor: pointer;
+    appearance: none;
+    left:50px;
+    right:0;
+    width: 30px;
+    height: 30px;
+    margin:0;
+    padding:0;
+    background-size: 30px 30px;
+    background-image: url(source/list.png);
+}
+
+input.inline:checked,
+input.list:checked {
+    background-color: lightskyblue;
+    outline-color: cornflowerblue;
+}
+
+img {
+    width: inherit;
+    padding: 0;
+    margin: 0;
+    position:absolute;
+    bottom: 0;
+}
+
+img:hover {
+    opacity: 0.7;
+}
+
+div.image {
+    width:275px;
+    height: 200px;
+    position: relative;
+}
+
+div.block {
+    display:inline-block;
+    width: 275px;
+    margin: 25px 20px 20px;
+    padding:0;
+}
+
+a.name {
+    font: 16px monospace;
+    letter-spacing: normal;
+    overflow: hidden;
+}
+
+a.name:hover {
+    color:red;
+}
+
+a.category {
+    font: 300 12px monospace;
+    letter-spacing: normal;
+    color:grey;
+}
+
+div.character {
+    width: 275px;;
+    margin: 0;
+    padding: 0;
+    color: royalblue;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+span.char {
+    color: mediumblue;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+p.space {
+    margin: 0;
+    line-height: 1px;
+    color:grey;
+}
+
+div.price {
+    color: green;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+
+span.old-price {
+    color: darkgrey;
+    font-size:13px;
+    text-decoration: line-through;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+fieldset.rating {
+    border:0;
+    margin: 5px 0 10px;
+    padding:0;
+}
+
+div.rating-group {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    background-image: url(source/star_empty.png);
+    background-size: 20px 20px;
+}
+
+input.stars {
+    cursor: pointer;
+    position: absolute;
+    left:0;
+    right:0;
+    height: 20px;
+    margin:0;
+    padding:0;
+    appearance: none;
+    background-size: 20px 20px;
+}
+
+input.stars:focus {
+    outline: none;
+}
+
+input.stars:checked,
+input.stars:hover {
+    background-image: url(source/star_full.png);
+}
+
+input.stars:hover ~ input.stars {
+    background-image: url(source/star_empty.png);
+}
+
+input.stars:nth-of-type(1) {
+    z-index: 10;
+    width: 10px;
+}
+
+input.stars:nth-of-type(2) {
+    z-index: 9;
+    width: 20px;
+}
+
+input.stars:nth-of-type(3) {
+    z-index: 8;
+    width: 30px;
+}
+
+input.stars:nth-of-type(4) {
+    z-index: 7;
+    width: 40px;
+}
+
+input.stars:nth-of-type(5) {
+    z-index: 6;
+    width: 50px;
+}
+
+input.stars:nth-of-type(6) {
+    z-index: 5;
+    width: 60px;
+}
+
+input.stars:nth-of-type(7) {
+    z-index: 4;
+    width: 70px;
+}
+
+input.stars:nth-of-type(8) {
+    z-index: 3;
+    width: 80px;
+}
+
+input.stars:nth-of-type(9) {
+    z-index: 2;
+    width: 90px;
+}
+
+input.stars:nth-of-type(10) {
+    z-index: 1;
+    width: 100px;
+}
+
+input.list:checked ~ div.block {
+    margin: 5px 700px 0px 100px;
+    position: relative;
+    width: 1100px;
+    height: 200px;
+}
+
+input.list:checked ~ div.block > div.second-block {
+    width: 420px;
+    position: absolute;
+    margin-left: 250px;
+    padding-left: 50px;
+    top:0;
+}
+
+input.list:checked ~ div.block > div.image > img {
+    top: 0;
+}
+
+input.list:checked ~ div.block > div.third-block {
+    position: absolute;
+    margin-left: 600px;
+    top:0;
+}
