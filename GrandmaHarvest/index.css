@@ -1,0 +1,29 @@
+header {
+    text-align: center;
+}
+
+header > h1 {
+    color: #FF8C00;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.slider {
+
+}
+
+.slide {
+
+}
+
+.contain_photo {
+
+}
+
+.contain_photo > img {
+
+}
+
+.slide > p {
+    
+}
