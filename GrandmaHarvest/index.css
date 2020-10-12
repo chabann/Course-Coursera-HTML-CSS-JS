@@ -8,22 +8,244 @@ header > h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.slider {
+body {
+    text-align: center;
+    min-width: 500px;
+}
 
+.slider {
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 300px;
 }
 
 .slide {
-
+    position: relative;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: white;
+    display: none;
+    vertical-align: top;
+    padding: .5vw;
+    z-index: 0;
+    /*margin: auto 15px auto 15px;*/
 }
 
-.contain_photo {
-
+.slider_label {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+	display: inline-block;
+	position: relative;
+    top:25vw;
+    left: -15px;
+    z-index: 1;
+    /*background-color: transparent;*/
 }
 
-.contain_photo > img {
-
+.modal_label {
+    width: 18vw;
+    height: 18vw;
+    min-width: 100px;
+    min-height: 100px;
+    position: relative;
+    background-color: transparent;
+    display: none;
+    vertical-align: top;
+    margin: auto .5vw auto .5vw;
 }
 
 .slide > p {
-    
+    display: none;
+    font: 12px sans-serif;
+    margin: .5vw;
 }
+
+.contain_photo {
+    position: relative;
+    display: block;
+    left: .5vw;
+    top: .5vw;
+    width: 17vw;
+    height: 17vw;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.contain_photo > img {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.control_slider {
+    display: inline-block;
+	position: relative;
+    top:25vw;
+}
+
+.modal_window {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.modal_window img {
+    display: none;
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10vw auto auto 30vw;
+    z-index: 1;
+}
+
+
+.m_img {
+    display: none; 
+}
+
+.exit {
+    position: fixed;
+    right: 100px;
+    top: 50px;
+    display: none;
+    /*width: 50px;
+    height: 50px;*/
+    width: 3vw;
+    height: 3vw;
+    border-radius: 35px;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 1;
+}
+
+.exit img {
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* hover  */
+
+.slide:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.control_slider:hover {
+    cursor: pointer;
+}
+
+.slider_label:hover {
+    cursor: pointer;
+}
+
+.slide:hover p {
+    display: block;
+}
+
+.exit:hover {
+    cursor:pointer;
+}
+
+/* ckecked images */
+
+#check1:checked ~ .slider #slide1,
+#check1:checked ~ .slider #slide2,
+#check1:checked ~ .slider #slide3,
+#check1:checked ~ .slider #slide4,
+#check1:checked ~ .slider > .gr1{
+    display: inline-block;
+    left: 15px;
+}
+
+#check2:checked ~ .slider #slide4,
+#check2:checked ~ .slider #slide5,
+#check2:checked ~ .slider #slide6,
+#check2:checked ~ .slider #slide7,
+#check2:checked ~ .slider > .gr2{
+    display: inline-block;
+    left: 15px;
+}
+
+#check3:checked ~ .slider #slide7,
+#check3:checked ~ .slider #slide8,
+#check3:checked ~ .slider #slide9,
+#check3:checked ~ .slider #slide10, 
+#check3:checked ~ .slider > .gr3 {
+    display: inline-block;
+    left: 15px;
+}
+
+
+/* checked image to open modal window */
+
+.m_img:checked ~ .modal_label p {
+    display: none;
+}
+
+#modal_img10:checked ~ .modal_window, #modal_img10:checked ~ .modal_window > #img1, #modal_img10:checked ~ .modal_label > .exit, #modal_img10:checked ~ .ex {
+    display: block;
+}
+
+#modal_img1:checked ~ .modal_window, #modal_img1:checked ~ .modal_window > #img1, #modal_img1:checked ~ .modal_label > .exit, #modal_img1:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img1:checked {
+    z-index: -1;
+}
+
+
+#modal_img2:checked ~ .modal_window, #modal_img2:checked ~ .modal_window > #img2, #modal_img2:checked ~ .modal_label > .exit, #modal_img2:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img3:checked ~ .modal_window, #modal_img3:checked ~ .modal_window > #img3, #modal_img3:checked ~ .modal_label > .exit, #modal_img3:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img4:checked ~ .modal_window, #modal_img4:checked ~ .modal_window > #img4, #modal_img4:checked ~ .modal_label > .exit, #modal_img4:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img5:checked ~ .modal_window, #modal_img5:checked ~ .modal_window > #img5, #modal_img5:checked ~ .modal_label > .exit, #modal_img5:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img6:checked ~ .modal_window, #modal_img6:checked ~ .modal_window > #img6, #modal_img6:checked ~ .modal_label > .exit, #modal_img6:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img7:checked ~ .modal_window, #modal_img7:checked ~ .modal_window > #img7, #modal_img7:checked ~ .modal_label > .exit, #modal_img7:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img8:checked ~ .modal_window, #modal_img8:checked ~ .modal_window > #img8, #modal_img8:checked ~ .modal_label > .exit, #modal_img8:checked ~ .ex  {
+    display: block;
+}
+
+#modal_img9:checked ~ .modal_window, #modal_img9:checked ~ .modal_window > #img9, #modal_img9:checked ~ .modal_label > .exit, #modal_img9:checked ~ .ex  {
+    display: block;
+}
+
+/* exit modal window */
+
+#exit:checked ~ .modal_window {
+    display: none;
+}
+
